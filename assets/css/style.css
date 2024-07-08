@@ -1,0 +1,97 @@
+*{
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+body{
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container{
+  width: 80%;
+  margin: 50px auto;
+}
+.wrap-image{
+  width: 80%;
+  margin: auto;
+  
+  
+  
+}
+.main-image{
+  position: relative;
+  background: url(../img/image1.jpg) center/cover no-repeat;
+  padding-top: 66.67%;
+  perspective: 1000px;
+  
+}
+
+.control{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  padding: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+}
+
+.btn-prev {
+  left: 10px;
+}
+
+.btn-next {
+  right: 10px;
+}
+
+.main-image:hover .control{
+  display: block;
+}
+  
+.list-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-image div {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  transform-origin: center center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+
+}
+
+.list-image img {
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.list-image .active img {
+  opacity: 1;
+}
+
+.main-image:hover .list-image{
+  display: flex;
+}
