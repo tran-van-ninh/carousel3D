@@ -12,6 +12,7 @@ var radius = 300; // Adjust this value to change the radius of the circle
 
 var autoChangeInterval = null;
 const autoChangeDelay = 3000; // 5 seconds
+console.log(mainImage)
 
 function updateImage(index) {
     currentIndex = index;
@@ -64,6 +65,8 @@ startAutoChange(); // Start auto change interval initially
 // Adjust the size and position of images based on main-image size
 window.addEventListener('resize', () => {
     var mainImageRect = mainImage.getBoundingClientRect();
-    radius = mainImageRect.width / 2; // Adjust the radius based on the size of main-image
+    console.log(mainImageRect)
+    //radius = mainImageRect.width / 2; // Adjust the radius based on the size of main-image
+    radius = (mainImageRect.width / 2 > 300) ? 300 : (mainImageRect.width / 2);
     updateImage(currentIndex);
 });
